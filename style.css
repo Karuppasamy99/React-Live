@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    font-size: 5rem;
+    display: flex;
+    justify-content: space-between;
+    margin : 5rem;
+}
+
+.navBar{
+    display: flex;
+    list-style-type: none;
+    font-size: 4rem;
+}
+
+li {
+    display: flex;
+    justify-content: space-evenly;
+    width: 300px;
+}
+
+li:hover{
+    text-decoration: underline;
+}

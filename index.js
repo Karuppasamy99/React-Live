@@ -1,21 +1,33 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const heading = React.createElement('h1', {
-    id: 'heading',
-    className: 'text-center'
-},"hello world")
-const heading2 = React.createElement('h2', {
-    id: 'heading2',
-    style: {
-        color:'red'
-    }
-},"hello world2")
+const Title = () => {
+    return (
+        <h1 className="title">ChappathiGPT</h1>
+    )
+}
 
-const container = React.createElement('div', {
-    id: 'container'
-},[heading, heading2])
+const NavItem = () => {
+    return (
+        <ul className="navBar">
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Cart</li>
+            
+        </ul>
+    )
+}
 
- const root = ReactDOM.createRoot(document.getElementById('root'))
+const Header = () => {
+    return (
+        <div className="header">
+            <Title />
+            <NavItem />
+        </div>
+    )
+}
 
-root.render(container)
+const root = ReactDOM.createRoot(document.getElementById('root'))
+
+root.render(<Header />)
