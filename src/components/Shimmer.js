@@ -2,7 +2,11 @@ import React from 'react'
 
 function Shimmer() {
   return (
-    <div className='shimmer'>Shimmer UI Loading .....................</div>
+    <div className='shimmer'>
+        {Array(10).fill('').map((e,index)=> <div className='shimmer-cards' key={index}>{e}</div>)}
+
+        
+    </div>
   )
 }
 

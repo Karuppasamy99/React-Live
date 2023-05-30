@@ -41,7 +41,7 @@
     
     width: 300px;
     height: 300px;
-    border: 2px solid black;
+    border: 2px solid lightgrey;
     margin : 20px;
     padding: 10px;
     box-shadow: #333;
@@ -51,12 +51,37 @@
     width: 90%;
     height: 70%;
 }
+
 .shimmer{
-    font-size: large;
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;    
 }
+
+
+.shimmer-cards{
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    background-color: lightgray;
+}
+
+
 /* .restaurant > h3{
     margin-top: 20px;
 } */
-
+.restaurant-detail{
+    
+    width: 300px;
+    height: 300px;
+    border: 2px solid lightgrey;
+    margin : 20px;
+    padding: 10px;
+    box-shadow: #333;
+}
+.restaurant-detail > img{
+    width: 90%;
+    height: 70%;
+}
 

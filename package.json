@@ -2,7 +2,6 @@
   "name": "react-live",
   "version": "1.0.0",
   "description": "React Live Project",
-  
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html",
@@ -26,7 +25,8 @@
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2"
   },
   "browserList": [
     "last 2 version"
