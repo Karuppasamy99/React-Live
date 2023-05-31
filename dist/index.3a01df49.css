@@ -49,6 +49,11 @@
   height: 70%;
 }
 
+.body > a {
+  color: #000;
+  text-decoration: none;
+}
+
 .shimmer {
   flex-flow: wrap;
   justify-content: center;

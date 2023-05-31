@@ -20,9 +20,10 @@ export default Body = () => {
     async function getRestaurant(){
       try{
         const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=8.701930899999999&lng=77.72807829999999&page_type=DESKTOP_WEB_LISTING');
-      const data = await response.json();
-      setAllRestaurant(data?.data?.cards[2]?.data?.data?.cards);
-      setFilteredRestaurants(data?.data?.cards[2]?.data?.data?.cards);
+        const data = await response.json();
+        setAllRestaurant(data?.data?.cards[0]?.data?.data?.cards);
+        setFilteredRestaurants(data?.data?.cards[0]?.data?.data?.cards);
+        console.log(data)
       }
       catch(err){
               console.log(err);
@@ -30,7 +31,7 @@ export default Body = () => {
       
     }
 
-    return (allRestaurant.length===0)?<Shimmer />: (
+    return (allRestaurant?.length===0)?<Shimmer />: (
         <>
         
         <input type="text" placeholder="Search Restaurants" value={search} name={search} onChange={ e => setSearch(e.target.value)} />
@@ -40,7 +41,7 @@ export default Body = () => {
         }}>Search</button>
         <div className="body">
           { filteredRestaurants?.length > 0? filteredRestaurants.map( restaurant => {
-            return <Link to={'/restaurant/'+restaurant.data.id} key={restaurant.data.id}><RestaurantCards {...restaurant.data}/></Link>
+            return <Link to={'/restaurant/'+restaurant.data.id} key={restaurant.data.id}><RestaurantCards className="restaurant-cards" {...restaurant.data}/></Link>
           }): "no restaurant found"}  
             
         </div>

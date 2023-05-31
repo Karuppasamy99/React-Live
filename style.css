@@ -37,6 +37,8 @@
     flex-wrap: wrap;
 }
 
+
+
 .restaurant{
     
     width: 300px;
@@ -50,6 +52,11 @@
 .restaurant > img{
     width: 90%;
     height: 70%;
+}
+
+.body > a{
+    text-decoration: none;
+    color: #000000;
 }
 
 .shimmer{
