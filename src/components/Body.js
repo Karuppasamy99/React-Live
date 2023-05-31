@@ -1,18 +1,16 @@
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 import Shimmer from "./Shimmer"
-
 import RestaurantCards from "./RestaurantCards"
-import { Link } from "react-router-dom"
-
-function filterRestaurants(search , restaurants){
-  const filterData = restaurants.filter(restaurant => restaurant?.data?.name?.toLowerCase().includes(search.toLowerCase()))
-  return filterData
-} 
+import { Link } from "react-router-dom" 
+import { filterRestaurants } from "../utils/helper"
+import useOnline from "../utils/useOnline"
 
 export default Body = () => {
     const [search , setSearch] = useState("")
     const [allRestaurant, setAllRestaurant] = useState([]);
     const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+    const online = useOnline();
+    
     useEffect(()=>{
       getRestaurant();
     },[])
@@ -31,12 +29,19 @@ export default Body = () => {
       
     }
 
+    if(!online){
+      return <h1>Please check your internet connection</h1>
+    }
+
+   
+    
+
     return (allRestaurant?.length===0)?<Shimmer />: (
         <>
         
         <input type="text" placeholder="Search Restaurants" value={search} name={search} onChange={ e => setSearch(e.target.value)} />
         <button onClick={() => {
-          const data = filterRestaurants(search, allRestaurant);
+          const data =filterRestaurants(search, allRestaurant);
           setFilteredRestaurants(data);
         }}>Search</button>
         <div className="body">

@@ -16,9 +16,9 @@ class About extends React.Component {
     <div>
         <h1>About</h1>
         <p>This is about us page</p>
-        <Profile age='23'/>
+        {/* <Profile age='23'/>
         <hr />
-        <ProfileClass age='24'/>
+        <ProfileClass age='24'/> */}
     </div>
     
   )
