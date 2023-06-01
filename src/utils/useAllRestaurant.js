@@ -1,7 +1,7 @@
 import { useState, useEffect} from 'react'
 import { ALL_RESTAURANT_URL } from '../config';
 
-export default useAllRestaurant = async () => {
+export default useAllRestaurant = () => {
     const [allRestaurants, setAllRestaurants] = useState(null);
     useEffect(()=>{
         getRestaurant();
@@ -11,7 +11,7 @@ export default useAllRestaurant = async () => {
     try{
         const response = await fetch(ALL_RESTAURANT_URL);
         const data = await response.json();
-        setAllRestaurants(data?.data?.cards[0]?.data?.data?.cards);
+        setAllRestaurants(data?.data?.cards[2]?.data?.data?.cards);
     }
     catch(err){
             console.log(err);

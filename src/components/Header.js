@@ -4,10 +4,10 @@ import NavBar from './NavBar';
 
 const Title = () => {
     return (
-        <div className="title">
+        <div className="flex-row">
             <a href="/">
-                <img src={img} height='100'/>
-                <h1>ChappathiGPT</h1>
+                <img src={img} className='h-24'/>
+                <span>ChappathiGPT</span>
             </a>
         </div>
         
@@ -16,7 +16,7 @@ const Title = () => {
 
 const Header = () => {
     return (
-        <div className="header">
+        <div className="flex justify-between">
             <Title />
             <NavBar />
         </div>

@@ -1,10 +1,11 @@
-import React from "react";
+import React,{lazy,Suspense} from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Footer from "./components/Footer";
 import About from "./components/About";
 import Contact from "./components/Contact";
+import Accordian from "./components/Accordian";
 import {
     createBrowserRouter,
     RouterProvider,
@@ -13,10 +14,13 @@ import {
 import Error from "./components/Error";
 import RestaurantInfo from "./components/RestaurantInfo";
 //import Profile from './components/Profile';
+import ChildToParent from "./components/ChildToParent";
+
+const Restaurants = lazy(()=> import('./components/Restaurants'))
 
 const AppLayout = () => {
     return (
-        <div className="app-layout">
+        <div className="p-2">
             <Header />
             <Outlet />
             <Footer/>
@@ -53,9 +57,22 @@ const appRouter = createBrowserRouter(
                 {
                     path: "/restaurant/:id",
                     element: <RestaurantInfo />
+                },
+                {
+                    path: "/restaurant",
+                    element: <Suspense>
+                        <Restaurants />
+                    </Suspense>
+                },
+                {
+                    path: '/accordian',
+                    element: <Accordian />
                 }
             ]
         },
+        {   path: '/color',
+            element: <ChildToParent />
+        }
         
 
     ]
